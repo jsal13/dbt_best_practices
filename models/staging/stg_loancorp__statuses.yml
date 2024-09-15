@@ -1,0 +1,31 @@
+
+models:
+  - name: stg_loancorp__statuses
+    description:
+      This table is a loan_id to customer_id lookup.
+    config:
+      contract:
+        enforced: true
+        
+    columns:
+      - name: loan_status_id
+        description: The ID of the associated loan status.
+        data_type: integer
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+
+      - name: loan_status_value
+        description: The value of the loan status.
+        data_type: text
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: text
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ["GREEN", "YELLOW", "RED"]
+
+     
+
+     
