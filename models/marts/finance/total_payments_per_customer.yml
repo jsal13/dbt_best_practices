@@ -2,8 +2,9 @@ version: 2
 
 models:
   - name: total_payments_per_customer
-    description: "Gives information re: total payments and number of loans per customer."
+    description: "Gives information about total payments and number of loans per customer."
     columns:
+
       - name: customer_id
         description: The ID of the associated customer.
         data_type: integer
@@ -14,19 +15,19 @@ models:
 
       - name: customer_name
         description: The first and last name of the customer.
-        data_type: text
+        data_type: varchar
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: text
+              column_type: varchar
 
       - name: customer_address
         description: The current address of the customer.
-        data_type: text
+        data_type: varchar
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: text
+              column_type: varchar
 
       - name: customer_age
         description: The age of the customer.
@@ -44,34 +45,34 @@ models:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: integer
 
-      - name: due_interest_amount_sum
+      - name: total_interest_paid
         description: Sum of all interest amounts due.
-        data_type: float
+        data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: float
+              column_type: double
 
-      - name: due_principal_amount_sum
+      - name: total_principal_paid
         description: Sum of all principal amounts due.
-        data_type: float
+        data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: float
+              column_type: double
 
-      - name: due_escrow_amount_sum
+      - name: total_escrow_paid
         description: Sum of all escrow amounts due.
-        data_type: float
+        data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: float
+              column_type: double
 
-      - name: due_fees_amount_sum
+      - name: total_fees_paid
         description: Sum of all escrow amounts due.
-        data_type: float
+        data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: float
+              column_type: double

@@ -19,27 +19,27 @@ models:
 
       - name: full_name
         description: The first and last name of the customer.
-        data_type: text
+        data_type: varchar
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: text
+              column_type: varchar
 
       - name: customer_address
         description: The current address of the customer.
-        data_type: text
+        data_type: varchar
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: text
+              column_type: varchar
 
       - name: social_security_number
         description: The social security number of the customer.
-        data_type: text
+        data_type: varchar
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: text
+              column_type: varchar
 
       - name: customer_age
         description: The age of the customer.

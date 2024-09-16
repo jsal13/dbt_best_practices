@@ -18,11 +18,11 @@ models:
 
       - name: loan_status_value
         description: The value of the loan status.
-        data_type: text
+        data_type: varchar
         data_tests:
           - dbt_expectations.expect_column_to_exist
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: text
+              column_type: varchar
           - dbt_expectations.expect_column_values_to_be_in_set:
               value_set: ["GREEN", "YELLOW", "RED"]
 
