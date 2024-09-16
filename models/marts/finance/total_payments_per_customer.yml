@@ -1,0 +1,77 @@
+version: 2
+
+models:
+  - name: total_payments_per_customer
+    description: "Gives information re: total payments and number of loans per customer."
+    columns:
+      - name: customer_id
+        description: The ID of the associated customer.
+        data_type: integer
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+
+      - name: customer_name
+        description: The first and last name of the customer.
+        data_type: text
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: text
+
+      - name: customer_address
+        description: The current address of the customer.
+        data_type: text
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: text
+
+      - name: customer_age
+        description: The age of the customer.
+        data_type: integer
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+
+      - name: number_of_unique_loans_assigned
+        description: The number of unique loans assigned to the associated customer.
+        data_type: integer
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+
+      - name: due_interest_amount_sum
+        description: Sum of all interest amounts due.
+        data_type: float
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
+
+      - name: due_principal_amount_sum
+        description: Sum of all principal amounts due.
+        data_type: float
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
+
+      - name: due_escrow_amount_sum
+        description: Sum of all escrow amounts due.
+        data_type: float
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
+
+      - name: due_fees_amount_sum
+        description: Sum of all escrow amounts due.
+        data_type: float
+        data_tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
