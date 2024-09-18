@@ -2,14 +2,14 @@ version: 2
 
 models:
   - name: stg_loancorp__loan_info
-    description: This table holds information about loans.
+    description: '{{ doc("stg_loancorp__loan_info") }}'
     config:
       contract:
         enforced: true
 
     columns:
       - name: loan_id
-        description: The ID of the associated loan.
+        description: '{{ doc("loancorp__loan_id") }}'
         data_type: integer
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -17,7 +17,7 @@ models:
               column_type: integer
 
       - name: loan_status_id
-        description: The ID of the associated loan status.
+        description: '{{ doc("loancorp__loan_status_id") }}'
         data_type: integer
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -25,7 +25,7 @@ models:
               column_type: integer
 
       - name: lender_id
-        description: The ID of the associated lender.
+        description: '{{ doc("loancorp__lender_id") }}'
         data_type: integer
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -33,7 +33,7 @@ models:
               column_type: integer
 
       - name: due_interest_amount
-        description: The amount the customer owes in interest.
+        description: '{{ doc("loancorp__due_interest_amount") }}'
         data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -41,7 +41,7 @@ models:
               column_type: double
 
       - name: due_principal_amount
-        description: The amount the customer owes of their principal.
+        description: '{{ doc("loancorp__due_principal_amount") }}'
         data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -49,7 +49,7 @@ models:
               column_type: double
 
       - name: due_escrow_amount
-        description: The amount the customer owes in escrow.
+        description: '{{ doc("loancorp__due_escrow_amount") }}'
         data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -57,7 +57,7 @@ models:
               column_type: double
 
       - name: due_fees_amount
-        description: The amount the customer owes in fees.
+        description: '{{ doc("loancorp__due_fees_amount") }}'
         data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -65,7 +65,7 @@ models:
               column_type: double
 
       - name: previous_payment_amount
-        description: The previous payment the customer successfully made.
+        description: '{{ doc("loancorp__previous_payment_amount") }}'
         data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -73,7 +73,7 @@ models:
               column_type: double
 
       - name: next_payment_amount
-        description: The next payment the customer is schedule to make.
+        description: '{{ doc("loancorp__next_payment_amount") }}'
         data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -81,7 +81,7 @@ models:
               column_type: double
 
       - name: credit_limit_amount
-        description: The credit limit of the customer.
+        description: '{{ doc("loancorp__credit_limit_amount") }}'
         data_type: double
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -89,7 +89,7 @@ models:
               column_type: double
 
       - name: number_of_unique_delinquencies
-        description: The number of unique delinquencies the customer has at loancorp.
+        description: '{{ doc("loancorp__number_of_unique_delinquencies") }}'
         data_type: integer
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -97,7 +97,7 @@ models:
               column_type: integer
 
       - name: recorded_at
-        description: The timestamp this row was created on.
+        description: '{{ doc("loancorp__recorded_at") }}'
         data_type: timestamp_ns
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -105,7 +105,7 @@ models:
               column_type: timestamp_ns
 
       - name: followup_on
-        description: The date a followup is schedule.
+        description: '{{ doc("loancorp__followup_on") }}'
         data_type: date
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -113,7 +113,7 @@ models:
               column_type: date
 
       - name: previous_payment_on
-        description: The date of the most recent previous payment.
+        description: '{{ doc("loancorp__previous_payment_on") }}'
         data_type: date
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -121,7 +121,7 @@ models:
               column_type: date
 
       - name: next_payment_on
-        description: The date the next payment is due.
+        description: '{{ doc("loancorp__next_payment_on") }}'
         data_type: date
         data_tests:
           - dbt_expectations.expect_column_to_exist

@@ -1,15 +1,14 @@
 
 models:
   - name: stg_loancorp__statuses
-    description:
-      This table is a loan_id to customer_id lookup.
+    description: '{{ doc("stg_loancorp__statuses") }}'
     config:
       contract:
         enforced: true
         
     columns:
       - name: loan_status_id
-        description: The ID of the associated loan status.
+        description: '{{ doc("loancorp__loan_status_id") }}'
         data_type: integer
         data_tests:
           - dbt_expectations.expect_column_to_exist
@@ -17,7 +16,7 @@ models:
               column_type: integer
 
       - name: loan_status_value
-        description: The value of the loan status.
+        description: '{{ doc("loancorp__loan_status_value") }}'
         data_type: varchar
         data_tests:
           - dbt_expectations.expect_column_to_exist
