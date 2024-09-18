@@ -1,7 +1,16 @@
 {# TABLE DOCUMENTATION #}
 
 {% docs stg_loancorp__customers %}
+# Loancorp Customers Table
+
+## Details
+
 This table holds information about loancorp customers.
+
+- Age
+- Address
+- Social Security Number
+
 {% enddocs %}
 
 {% docs stg_loancorp__lenders %}
@@ -113,9 +122,6 @@ The date of the most recent previous payment.
 {% docs loancorp__next_payment_on %}
 The date the next payment is due.
 {% enddocs %}
-
-{# DERIVED COLUMN DOCUMENTATION #}
-{# James: Do I care about this distinction? #}
 
 {% docs loancorp__number_of_loan_ids %}
 The number of distinct loan_ids assigned to the corresponding customer_id.
